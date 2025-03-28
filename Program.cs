@@ -330,21 +330,60 @@
 
 
 // 2. Swap Values without using any variable a=10, b=12.
+//using System;
+//using System.Collections.Generic;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int a = 10;
+//            int b = 12;
+
+//            a = a + b;
+//            b = a - b;
+//            a = a - b;
+//            Console.WriteLine($"A: {a} B: {b}");
+//        }
+//    }
+//}
+
+
+// 8. WAP to print Fibonacci series without recursion.
 using System;
-using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            int a = 10;
-            int b = 12;
+            Console.WriteLine("Enter the number :");
+            int n = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(fibo(i));
+            fibo(n);
+        }
 
-            a = a + b;
-            b = a - b;
-            a = a - b;
-            Console.WriteLine($"A: {a} B: {b}");
+        public static void fibo(int n)
+        {
+            int a = 0;
+            int b = 1;
+
+            if (n >= 1)
+            {
+                Console.Write(a + " "); // Print the first term
+            }
+            if (n >= 2)
+            {
+                Console.Write(b + " "); // Print the second term
+            }
+            for (int i = 2; i < n; i++) // changed the loop condition.
+            {
+                int c = a + b;
+                Console.Write(c + " "); // Print the calculated term
+                a = b;
+                b = c;
+            }
         }
     }
 }
