@@ -283,26 +283,47 @@
 
 
 // 7. WAP to print Fibonacci series with recursion.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number to get the fibonacci series");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            for (int i = 3; i < n; i++)
+//            {
+//                Console.WriteLine(fibo(i));
+//            }
+//        }
+
+//        public static int fibo(int n)
+//        {
+//            if (n <= 1) return n;
+//            // if(n==2) return n;
+//            return fibo(n - 1) + fibo(n - 2);
+//        }
+//    }
+//}
+
+//2. WAP to reverse an integer without converting it to a string, without using any built-in methods.
 using System;
-namespace logicals
+namespace Logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number to get the fibonacci series");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 3; i < n; i++)
+            int n = 123;
+            int reversed = 0;
+            while (n > 0)
             {
-                Console.WriteLine(fibo(i));
+                int reminder = n % 10;
+                reversed = reversed * 10 + reminder;
+                n = n / 10;
             }
-        }
-
-        public static int fibo(int n)
-        {
-            if (n <= 1) return n;
-            // if(n==2) return n;
-            return fibo(n - 1) + fibo(n - 2);
+            Console.WriteLine(reversed);
         }
     }
 }
