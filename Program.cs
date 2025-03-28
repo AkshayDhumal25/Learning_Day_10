@@ -202,20 +202,45 @@
 
 
 //Delegate
+//using System;
+//namespace delegates
+//{
+//    public delegate void Mydelegate(string name);
+//    class Program
+//    {
+//        public static void print(string name)
+//        {
+//            Console.WriteLine(name);
+//        }
+//        public static void Main(string[] str)
+//        {
+//            Mydelegate del = new Mydelegate(print);
+//            del("Akshay");
+//        }
+//    }
+//}
+
+//Abstraction
 using System;
-namespace delegates
+namespace abstraction
 {
-    public delegate void Mydelegate(string name);
+    abstract class Base
+    {
+        public abstract void print();
+    }
+    class Child : Base
+    {
+        public override void print()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
     class Program
     {
-        public static void print(string name)
+        public static void Main(string[] args)
         {
-            Console.WriteLine(name);
-        }
-        public static void Main(string[] str)
-        {
-            Mydelegate del = new Mydelegate(print);
-            del("Akshay");
+            Child b = new Child();
+            b.print();
         }
     }
 }
