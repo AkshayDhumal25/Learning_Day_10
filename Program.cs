@@ -247,36 +247,62 @@
 
 
 //Find missing elements from the array
+//using System;
+//namespace missingElements
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 1, 2, 4, 5, 7, 8, 10 };
+//            int start = array.Min();
+//            int end = array.Max();
+
+//            List<int> missingElements = FindMissingElements(array, start, end);
+//            foreach(int element in missingElements)
+//            {
+//                Console.WriteLine(element);
+//            }
+//        }
+
+//        public static List<int> FindMissingElements(int[] array, int start, int end)
+//        {
+//            var missing = new List<int>();
+//            HashSet<int> ints = new HashSet<int>(array);
+//            for(int i=start;i<= end; i++)
+//            {
+//                if(!ints.Contains(i))
+//                {
+//                    missing.Add(i);
+//                }
+//            }
+//            return missing;
+//        }
+//    }
+//}
+
+
+// 7. WAP to print Fibonacci series with recursion.
 using System;
-namespace missingElements
+namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            int[] array = { 1, 2, 4, 5, 7, 8, 10 };
-            int start = array.Min();
-            int end = array.Max();
-
-            List<int> missingElements = FindMissingElements(array, start, end);
-            foreach(int element in missingElements)
+            Console.WriteLine("Enter the number to get the fibonacci series");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 3; i < n; i++)
             {
-                Console.WriteLine(element);
+                Console.WriteLine(fibo(i));
             }
         }
 
-        public static List<int> FindMissingElements(int[] array, int start, int end)
+        public static int fibo(int n)
         {
-            var missing = new List<int>();
-            HashSet<int> ints = new HashSet<int>(array);
-            for(int i=start;i<= end; i++)
-            {
-                if(!ints.Contains(i))
-                {
-                    missing.Add(i);
-                }
-            }
-            return missing;
+            if (n <= 1) return n;
+            // if(n==2) return n;
+            return fibo(n - 1) + fibo(n - 2);
         }
     }
 }
