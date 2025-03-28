@@ -153,23 +153,51 @@
 //}
 
 // ref and out parameters
-using System;
-namespace refandout
-{
-    class Program
-    {
+//using System;
+//namespace refandout
+//{
+//    class Program
+//    {
 
-        public static void increment(out int a)
-        {
-            a = 10;
-            a++;
-            Console.WriteLine(a);
-        }
+//        public static void increment(out int a)
+//        {
+//            a = 10;
+//            a++;
+//            Console.WriteLine(a);
+//        }
 
-        public static void Main(string[] args)
-        {
-            int a;
-            Program.increment(out a);
-        }
-    }
-}
+//        public static void Main(string[] args)
+//        {
+//            int a;
+//            Program.increment(out a);
+//        }
+//    }
+
+
+//Exception Handling 
+//using System;
+//namespace exceptionHandling
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the 1st Element : ");
+//            int x = Convert.ToInt32(Console.ReadLine());
+//            Console.WriteLine("Enter the 2nd Element : ");
+//            int y = Convert.ToInt32(Console.ReadLine());
+//            try
+//            {
+//                Console.WriteLine(x / y);
+//            }
+//            catch (DivideByZeroException)
+//            {
+//                Console.WriteLine("Can't divide a number by zero");
+//            }
+
+
+//        }
+//    }
+//}
+
+
