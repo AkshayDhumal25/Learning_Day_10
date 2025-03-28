@@ -201,3 +201,21 @@
 //}
 
 
+//Delegate
+using System;
+namespace delegates
+{
+    public delegate void Mydelegate(string name);
+    class Program
+    {
+        public static void print(string name)
+        {
+            Console.WriteLine(name);
+        }
+        public static void Main(string[] str)
+        {
+            Mydelegate del = new Mydelegate(print);
+            del("Akshay");
+        }
+    }
+}
