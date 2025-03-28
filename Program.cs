@@ -151,3 +151,25 @@
 //        }
 //    }
 //}
+
+// ref and out parameters
+using System;
+namespace refandout
+{
+    class Program
+    {
+
+        public static void increment(out int a)
+        {
+            a = 10;
+            a++;
+            Console.WriteLine(a);
+        }
+
+        public static void Main(string[] args)
+        {
+            int a;
+            Program.increment(out a);
+        }
+    }
+}
