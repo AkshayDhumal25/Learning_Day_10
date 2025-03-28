@@ -221,26 +221,62 @@
 //}
 
 //Abstraction
+//using System;
+//namespace abstraction
+//{
+//    abstract class Base
+//    {
+//        public abstract void print();
+//    }
+//    class Child : Base
+//    {
+//        public override void print()
+//        {
+//            Console.WriteLine("Hello");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Child b = new Child();
+//            b.print();
+//        }
+//    }
+//}
+
+
+//Find missing elements from the array
 using System;
-namespace abstraction
+namespace missingElements
 {
-    abstract class Base
-    {
-        public abstract void print();
-    }
-    class Child : Base
-    {
-        public override void print()
-        {
-            Console.WriteLine("Hello");
-        }
-    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Child b = new Child();
-            b.print();
+            int[] array = { 1, 2, 4, 5, 7, 8, 10 };
+            int start = array.Min();
+            int end = array.Max();
+
+            List<int> missingElements = FindMissingElements(array, start, end);
+            foreach(int element in missingElements)
+            {
+                Console.WriteLine(element);
+            }
+        }
+
+        public static List<int> FindMissingElements(int[] array, int start, int end)
+        {
+            var missing = new List<int>();
+            HashSet<int> ints = new HashSet<int>(array);
+            for(int i=start;i<= end; i++)
+            {
+                if(!ints.Contains(i))
+                {
+                    missing.Add(i);
+                }
+            }
+            return missing;
         }
     }
 }
