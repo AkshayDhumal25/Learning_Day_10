@@ -72,37 +72,82 @@
 // What will be the complexity for it?
 // Any better solution for the above problem?
 
-using System;
-namespace logicals
-{
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            int[] arr = { 80, 60, 10, 50, 30, 100, 0, 50 };
-            Array.Sort(arr);
-            int left = 0;
-            int right = arr.Length - 1;
-            int targetSum = 100;
-            while (left < right)
-            {
-                int sum = (arr[left] + arr[right]);
-                if (sum == targetSum)
-                {
-                    Console.WriteLine(arr[left] + " " + arr[right]);
-                    left++;
-                    right--;
-                }
-                else if (sum < targetSum)
-                {
-                    left++;
-                }
-                else
-                {
-                    right--;
-                }
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] arr = { 80, 60, 10, 50, 30, 100, 0, 50 };
+//            Array.Sort(arr);
+//            int left = 0;
+//            int right = arr.Length - 1;
+//            int targetSum = 100;
+//            while (left < right)
+//            {
+//                int sum = (arr[left] + arr[right]);
+//                if (sum == targetSum)
+//                {
+//                    Console.WriteLine(arr[left] + " " + arr[right]);
+//                    left++;
+//                    right--;
+//                }
+//                else if (sum < targetSum)
+//                {
+//                    left++;
+//                }
+//                else
+//                {
+//                    right--;
+//                }
 
-            }
-        }
-    }
-}
+//            }
+//        }
+//    }
+//}
+
+
+//Enum
+//using System;
+//namespace Enum
+//{
+//    class Program
+//    {
+
+//        public enum ShippingMethod
+//        {
+//            RegularAirMail = 1,
+//            RegisteredAirMail = 2,
+//            Express = 3
+//        }
+//        public static void Main(string[] args)
+//        {
+//            var method = ShippingMethod.Express;
+//            Console.WriteLine((int)method);
+//        }
+//    }
+//}
+
+
+
+//Constructors
+// It's a special method present under a class responsible for initializing the variables of that class 
+//using System;
+//namespace constructors
+//{
+//    class Person
+//    {
+//        public Person(string name)
+//        {
+//            Console.WriteLine($"Hello my name is {name}");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Person p = new Person("Akshay");
+//        }
+//    }
+//}
