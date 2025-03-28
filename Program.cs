@@ -23,44 +23,86 @@
 //}
 
 // Encapsulation
+//using System;
+//namespace encapsulation
+//{
+//    class rectangleArea
+//    {
+//        private double length;
+//        private double width;
+
+//        public double Length
+//        {
+//            get { return length; }
+//            set { length = value; }
+//        }
+
+//        public double Width
+//        {
+//            get { return width; }
+//            set { width = value; }
+//        }
+//        public double getArea()
+//        {
+//            return length * width;
+//        }
+
+//        public void Display()
+//        {
+//            Console.WriteLine($"Length : {length} and Width : {width}");
+//            Console.WriteLine($"Area :" + getArea());
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            rectangleArea r = new rectangleArea();
+//            r.Length = 9.0;
+//            r.Width = 9.0;
+//            r.Display();
+//        }
+//    }
+//}
+
+
+// 14. [80, 60, 10, 50, 30, 100, 0, 50]
+// Find pairs whose sum = 100;
+// Logic for above problem?
+// What will be the complexity for it?
+// Any better solution for the above problem?
+
 using System;
-namespace encapsulation
+namespace logicals
 {
-    class rectangleArea
-    {
-        private double length;
-        private double width;
-
-        public double Length
-        {
-            get { return length; }
-            set { length = value; }
-        }
-
-        public double Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-        public double getArea()
-        {
-            return length * width;
-        }
-
-        public void Display()
-        {
-            Console.WriteLine($"Length : {length} and Width : {width}");
-            Console.WriteLine($"Area :" + getArea());
-        }
-    }
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            rectangleArea r = new rectangleArea();
-            r.Length = 9.0;
-            r.Width = 9.0;
-            r.Display();
+            int[] arr = { 80, 60, 10, 50, 30, 100, 0, 50 };
+            Array.Sort(arr);
+            int left = 0;
+            int right = arr.Length - 1;
+            int targetSum = 100;
+            while (left < right)
+            {
+                int sum = (arr[left] + arr[right]);
+                if (sum == targetSum)
+                {
+                    Console.WriteLine(arr[left] + " " + arr[right]);
+                    left++;
+                    right--;
+                }
+                else if (sum < targetSum)
+                {
+                    left++;
+                }
+                else
+                {
+                    right--;
+                }
+
+            }
         }
     }
 }
